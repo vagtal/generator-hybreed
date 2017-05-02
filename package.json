@@ -1,0 +1,56 @@
+{
+  "name": "generator-hybreed",
+  "version": "1.0.0",
+  "description": "Generator for Hybreed, Hybreed is a framework to develop swift and good looking hybrid mobile apps. It's Cordova based and use the latest front-end techologies: Gulp, ES6, Browserify, BrowserSync, SASS...",
+  "homepage": "https://github.com/atSistemas/hybreed",
+  "author": {
+    "name": "vagtal",
+    "email": "alopez.leiva@atsistemas.com"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "coveralls": "^2.12.0",
+    "eslint": "^3.18.0",
+    "eslint-config-xo-space": "^0.16.0",
+    "fs-extra": "^3.0.0",
+    "jest": "^19.0.2",
+    "jest-cli": "^19.0.1",
+    "nsp": "^2.6.3",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "^1.0.0",
+    "chalk": "^1.1.3",
+    "yosay": "^2.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint . --fix",
+    "test": "jest"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "jest": true,
+      "node": true
+    }
+  },
+  "repository": "vagtal/generator-hybreed",
+  "license": "MIT"
+}

@@ -1,0 +1,36 @@
+.login {
+  @include size(100%);
+  background: #F0F0F0;
+  display: table;
+
+  .center {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .form {
+    width: 250px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 25px;
+    margin: 0 auto;
+    text-align: right;
+    background: white;
+    box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.35);
+
+    .logo {
+      display: block;
+      @include size(200px, 55px);
+      background: no-repeat url($img-hybreed-logo);
+      background-size: 100% 100%;
+    }
+
+    .input-with-icon {
+      width: 100%;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  }
+}

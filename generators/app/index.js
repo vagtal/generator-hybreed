@@ -3,6 +3,8 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
 const fs = require('fs-extra');
+const remote = require('yeoman-remote');
+const path = require('path');
 
 module.exports = class extends Generator {
   prompting() {
@@ -49,18 +51,21 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copy(this.templatePath('static/**/*'), this.destinationPath('.'));
-    this.fs.copy(this.templatePath('static/.babelrc'), this.destinationPath('.babelrc'));
-    this.fs.copy(this.templatePath('static/.DS_Store'), this.destinationPath('.DS_Store'));
-    this.fs.copy(this.templatePath('static/.eslintrc'), this.destinationPath('.eslintrc'));
-    this.fs.copy(this.templatePath('static/.gitignore'), this.destinationPath('.gitignore'));
-    this.fs.copy(this.templatePath('static/resources/.DS_Store'), this.destinationPath('resources/.DS_Store'));
-    this.fs.copy(this.templatePath('static/plugins/.gitkeep'), this.destinationPath('plugins/.gitkeep'));
-    this.fs.copy(this.templatePath('static/platforms/.gitkeep'), this.destinationPath('platforms/.gitkeep'));
-    this.fs.copy(this.templatePath('static/www/.gitkeep'), this.destinationPath('www/.gitkeep'));
-    this.fs.copy(this.templatePath('static/test/js/.DS_Store'), this.destinationPath('test/js/.DS_Store'));
-    this.fs.copyTpl(
-              this.templatePath('_package.json'),
+	 var done = this.async();
+
+    remote('vagtal', 'hybreed', 'master', function (err, cachePath) {
+	this.fs.copy(path.join(cachePath, '**/*'), this.destinationPath('.'));
+    	this.fs.copy(path.join(cachePath, '.babelrc'), this.destinationPath('.babelrc'));
+  	   this.fs.copy(path.join(cachePath, '.DS_Store'), this.destinationPath('.DS_Store'));
+  	   this.fs.copy(path.join(cachePath, '.eslintrc'), this.destinationPath('.eslintrc'));
+  	   this.fs.copy(path.join(cachePath, '.gitignore'), this.destinationPath('.gitignore'));
+ 	   this.fs.copy(path.join(cachePath, 'resources/.DS_Store'), this.destinationPath('resources/.DS_Store'));
+ 	   this.fs.copy(path.join(cachePath, 'plugins/.gitkeep'), this.destinationPath('plugins/.gitkeep'));
+ 	   this.fs.copy(path.join(cachePath, 'platforms/.gitkeep'), this.destinationPath('platforms/.gitkeep'));
+ 	   this.fs.copy(path.join(cachePath, 'www/.gitkeep'), this.destinationPath('www/.gitkeep'));
+ 	   this.fs.copy(path.join(cachePath, 'test/js/.DS_Store'), this.destinationPath('test/js/.DS_Store'));
+ 	   this.fs.copyTpl(
+              path.join(cachePath, 'package.json'),
               this.destinationPath('package.json'), {
                 name: this.props.name,
 		version: this.props.version,
@@ -69,6 +74,9 @@ module.exports = class extends Generator {
 		license: this.props.license
               }
           );
+      done();
+    }.bind(this));
+    
   }
 
   install() {

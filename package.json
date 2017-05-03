@@ -1,6 +1,6 @@
 {
   "name": "generator-hybreed",
-  "version": "2.0.0",
+  "version": "2.5.0",
   "description": "Generator for Hybreed, Hybreed is a framework to develop swift and good looking hybrid mobile apps. It's Cordova based and use the latest front-end techologies: Gulp, ES6, Browserify, BrowserSync, SASS...",
   "homepage": "https://github.com/vagtal/generator-hybreed",
   "author": {

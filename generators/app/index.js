@@ -10,7 +10,7 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the tiptop ' + chalk.red('generator-hybreed') + ' generator!'
+      'Welcome to the ' + chalk.red('generator-hybreed') + ' generator!'
     ));
 
     const prompts = [{

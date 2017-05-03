@@ -1,18 +1,13 @@
-import View from './views/<%= name %>'
 import {Broker} from '~/src/vendor/libs';
 
 var view;
 
 function start(model) {
-    showExampleView(model);
+    showView(model);
 }
 
-function showExampleView(model) {
-
-    exampleView = new ExampleView({
-        model: model
-    });
-
+function showView(model) {
+    
 }
 
 //

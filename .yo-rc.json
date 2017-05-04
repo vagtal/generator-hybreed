@@ -1,9 +1,9 @@
 {
   "generator-node": {
     "promptValues": {
-      "authorName": "vagtal",
+      "authorName": "Vagtal",
       "authorEmail": "alopez.leiva@atsistemas.com",
-      "authorUrl": ""
+      "authorUrl": "https://github.com/vagtal/generator-hybreed/"
     }
   }
 }

@@ -1,3 +1,4 @@
+import {_, Backbone} from '~/src/vendor/libs';
 const <%= name.charAt(0).toUpperCase() + name.slice(1); %> = Backbone.Model.extend({
 
     urlRoot: '',

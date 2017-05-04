@@ -13,7 +13,7 @@ module.exports = class extends Generator {
     const prompts = [{
       type: 'input',
       name: 'name',
-      message: 'Write the name of the controller'
+      message: 'Write the name of the controller (REQUIRED)'
     }];
 
     return this.prompt(prompts).then(props => {
@@ -22,10 +22,14 @@ module.exports = class extends Generator {
     });
   }
 
+  paths() {
+    this.destinationRoot(this.contextRoot);
+  }
+
   writing() {
-	this.fs.copyTpl(this.templatePath('index.js'),
-              this.destinationPath(this.props.name+'.js'), {
-                name: this.props.name
-              });
+    this.fs.copyTpl(this.templatePath('index.js'),
+      this.destinationPath(this.props.name + '.js'), {
+        name: this.props.name
+      });
   }
 };

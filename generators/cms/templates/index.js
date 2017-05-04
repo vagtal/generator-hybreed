@@ -1,4 +1,5 @@
-import <%= name.charAt(0).toUpperCase() + name.slice(1); %>s from './models/<%= name %>s';
+import {Broker} from '~/src/vendor/libs';
+import <%= name.charAt(0).toUpperCase() + name.slice(1); %>s from './models/<%= name %>';
 
 function get<%= name.charAt(0).toUpperCase() + name.slice(1); %>sCollection() {
     return <%= name.charAt(0).toUpperCase() + name.slice(1); %>s.get<%= name.charAt(0).toUpperCase() + name.slice(1); %>sCollection();

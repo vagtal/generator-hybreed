@@ -26,8 +26,32 @@ yo hybreed
 gulp develop
 ```
 
+### CMS
+Generates an entire CMS with one model, and import/export it in `src/modules/modules.js`.
+
+Example:
+```bash
+yo hybreed:cms
+```
+
+Produces `src/modules/CMS/index.js`, `src/modules/CMS/models/modelName.js` with all the basics to start developing with this CMS.
+
+**IMPORTANT: Make sure that is imported and exported it in `src/modules/modules.js`**
+
+### Model
+Generates a model in `src/modules/CMS/models`, you only need to import/export it in `.src/modules/CMS/index.js`.
+
+Example:
+```bash
+yo hybreed:model
+```
+
+Produces src/modules/CMS/models/modelName.js` with all the basics to start developing with this model.
+
+**IMPORTANT: You need to import and export this functions in `src/modules/modules.js`**
+
 ### Module
-Generates an entire module with controller and view, and configures a route in `app/scripts/app.js` connecting them.
+Generates an entire module with controller and view and import/export it in `src/modules/modules.js`.
 
 Example:
 ```bash
@@ -37,6 +61,26 @@ yo hybreed:module
 Produces `src/modules/moduleName/index.js`, `src/modules/moduleName/view/moduleName.js`, `src/modules/moduleName/view/moduleName.html`, `src/modules/moduleName/view/moduleName.css` with all the basics to start developing.
 
 **IMPORTANT: Make sure that is imported and exported it in src/modules/modules.js**
+
+### Controller
+Generates a controller in the actual folder.
+
+Example:
+```bash
+yo hybreed:controller
+```
+
+Produces `controllerName.js`, with all the basics to start developing.
+
+### View
+Generates an entire view in the actual folder.
+
+Example:
+```bash
+yo hybreed:view
+```
+
+Produces `viewName.js`, `viewName.html`, `viewName.css` with all the basics to start developing.
 
 ## Getting To Know Yeoman
 
